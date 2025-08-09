@@ -85,7 +85,7 @@ module pd2(input signed [`WD:0] ins,
       if(read_shift | write_shift) begin
          valid1 <= write_shift ? 1 : 0;
          valid2 <= valid1;
-         peak1 <= write_shift ? peak : 0;
+         peak1 <= write_shift ? peak : 0; //could also just write peak, since valid instructs downstream module to ignore if zero
          peak2 <= peak1;
       end
    end
